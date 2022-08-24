@@ -1,0 +1,32 @@
+.carousel {
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 500px;
+    position: relative;
+}
+.carousel_inner {
+    white-space: nowrap;
+    transition: ease 1s;
+}
+.carousel_item {
+    display: inline-block;
+    width: 100%;
+}
+
+.carousel_control {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    display: inline-block;
+    position: absolute;
+    height: 50px;
+    width: 70px;
+    color: #f3f3f3;
+    cursor: pointer;
+    top: calc(50% - 25px);
+}
+.left {
+    left: 0
+}
+.right {
+    right: 0;
+}
