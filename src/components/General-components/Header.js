@@ -3,6 +3,7 @@ import { AppBar, Toolbar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -57,6 +58,12 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
   const classes = useStyles();
+  const navigate = useNavigate();
+
+  const route = (path) => {
+    navigate(`/${path}`);
+  };
+
   return (
     <header className={classes.appBar}>
       <div className={classes.inner_flex}>
@@ -65,7 +72,9 @@ const Header = () => {
         </div>
 
         <div className={classes.menuItems}>
-          <p className={classes.menuItem}>HOME</p>
+          <p className={classes.menuItem} onClick={() => route("")}>
+            HOME
+          </p>
           <div
             className={classes.menuItem}
             style={{ display: "flex", alignItems: "center" }}
@@ -73,8 +82,12 @@ const Header = () => {
             <p>SERVICES</p>
             <MdOutlineArrowDropDown className={classes.dowpDownArrow} />
           </div>
-          <p className={classes.menuItem}>CONTACT</p>
-          <p className={classes.menuItem}>ABOUT US</p>
+          <p className={classes.menuItem} onClick={() => route("contact")}>
+            CONTACT
+          </p>
+          <p className={classes.menuItem} onClick={() => route("about")}>
+            ABOUT US
+          </p>
           <p className={classes.menuItem}>TESTIMONIAL</p>
         </div>
         <div>
