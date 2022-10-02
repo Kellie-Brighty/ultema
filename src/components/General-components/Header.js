@@ -59,6 +59,9 @@ const useStyles = makeStyles((theme) => ({
 const Header = () => {
   const classes = useStyles();
   const navigate = useNavigate();
+  const location = window.location.pathname;
+
+  console.log(location);
 
   const route = (path) => {
     navigate(`/${path}`);
@@ -72,7 +75,14 @@ const Header = () => {
         </div>
 
         <div className={classes.menuItems}>
-          <p className={classes.menuItem} onClick={() => route("")}>
+          <p
+            className={classes.menuItem}
+            style={{
+              color: location === "/" && "#000",
+              fontWeight: location === "/" && "700",
+            }}
+            onClick={() => route("")}
+          >
             HOME
           </p>
           <div
@@ -82,13 +92,36 @@ const Header = () => {
             <p>SERVICES</p>
             <MdOutlineArrowDropDown className={classes.dowpDownArrow} />
           </div>
-          <p className={classes.menuItem} onClick={() => route("contact")}>
+          <p
+            className={classes.menuItem}
+            style={{
+              color: location === "/contact" && "#000",
+              fontWeight: location === "/contact" && "700",
+            }}
+            onClick={() => route("contact")}
+          >
             CONTACT
           </p>
-          <p className={classes.menuItem} onClick={() => route("about")}>
+          <p
+            className={classes.menuItem}
+            style={{
+              color: location === "/about" && "#000",
+              fontWeight: location === "/about" && "700",
+            }}
+            onClick={() => route("about")}
+          >
             ABOUT US
           </p>
-          <p className={classes.menuItem}>TESTIMONIAL</p>
+          <p
+            className={classes.menuItem}
+            style={{
+              color: location === "/testimonial" && "#000",
+              fontWeight: location === "/testimonial" && "700",
+            }}
+            onClick={() => route("testimonial")}
+          >
+            TESTIMONIAL
+          </p>
         </div>
         <div>
           <img src="mobileMenu.png" className={classes.mobileMenu} />

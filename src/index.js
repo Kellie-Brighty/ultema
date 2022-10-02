@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import { GlobalProvider } from "./store/context";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import Testimonial from "./pages/Testimonial";
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
+            <Route path="/testimonial" element={<Testimonial />} />
           </Routes>
         </Router>
       </GlobalProvider>
